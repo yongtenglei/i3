@@ -36,12 +36,16 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# ==============================begin================================
+
 # change wallpaper
 #exec_always --no-startup-id nitrogen --restore &
 exec --no-startup-id ~/scripts/wp.sh &
 
 exec_always --no-startup-id picom &
-exec_always --no-startup-id killall polybar; sleep 0.5; polybar main &
+
+# polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # input method
 exec_always --no-startup-id killall fcitx5
@@ -67,6 +71,18 @@ bindsym $mod+Shift+minus move scratchpad
 
 # 呼出第一个便笺本
 bindsym $mod+minus scratchpad show
+
+# file manager
+bindsym $mod+Shift+d exec dolphin
+
+# volume
+bindsym $mod+k exec amixer -qM set Master 2%+ umute
+bindsym $mod+Shift+k exec amixer -qM set Master 2%- umute
+bindsym $mod+Shift+m exec amixer -qM set Master toggle
+
+
+
+# ==============================end================================
 
 # Assign apps to specific workspaces
 #assign [class="WhatsAppQT"] 9
@@ -222,7 +238,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+\ exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
