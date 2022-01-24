@@ -44,6 +44,9 @@ exec --no-startup-id ~/scripts/wp.sh &
 
 exec_always --no-startup-id picom &
 
+exec_always --no-startup-id killall dunst
+exec_always --no-startup-id sleep 1.5; exec dunst &
+
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
@@ -55,7 +58,7 @@ exec_always --no-startup-id sleep 1.5; exec fcitx5 &
 exec_always --no-startup-id ~/scripts/remaps.sh &
 
 #open browser
-bindsym $mod+b exec waterfox-g4
+bindsym $mod+b exec waterfox
 
 # muti-monitor
 exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --primary --mode 1920x1200 --pos 1920x0 --rotate normal --right-of DP-2
@@ -63,7 +66,11 @@ exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 --pos 0x0 --rotate no
 # Manage plugging a monitor
 #bindsym $mod+m exec --no-startup-id xrandr --output HDMI-1 --left-of eDP-1 --primary
 #bindsym $mod+m exec --no-startup-id xrandr --output HDMI-0 --right-of DP-2 --primary --auto
-bindsym $mod+x move workspace to output DP-2 HDMI-0
+
+# for HDMI
+#bindsym $mod+x move workspace to output DP-2 HDMI-0
+# for DP
+bindsym $mod+x move workspace to output DP-2 DP-3
 
 #scratchpad
 # 把当前窗口设为便笺本
@@ -81,6 +88,7 @@ bindsym $mod+Shift+k exec amixer -qM set Master 2%- umute
 bindsym $mod+Shift+m exec amixer -qM set Master toggle
 
 
+bindsym $mod+z exec flameshot gui
 
 # ==============================end================================
 
