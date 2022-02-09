@@ -90,6 +90,11 @@ bindsym $mod+Shift+m exec amixer -qM set Master toggle
 
 bindsym $mod+z exec flameshot gui
 
+# redshift
+exec --no-startup-id ~/scripts/redshift.sh &
+
+
+
 # ==============================end================================
 
 # Assign apps to specific workspaces
