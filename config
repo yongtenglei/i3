@@ -61,7 +61,7 @@ exec_always --no-startup-id ~/scripts/remaps.sh &
 bindsym $mod+b exec waterfox
 
 # muti-monitor
-exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --primary --mode 1920x1200 --pos 1920x0 --rotate normal --right-of DP-2
+#exec --no-startup-id xrandr --output DP-3 --mode 2560x1440 --pos 0x0 --rotate normal  --primary  --right-of DP-2
 
 # Manage plugging a monitor
 #bindsym $mod+m exec --no-startup-id xrandr --output HDMI-1 --left-of eDP-1 --primary
@@ -130,7 +130,8 @@ bindsym XF86AudioPrev exec playerctl previous
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+#bindsym $mod+Return exec st
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
