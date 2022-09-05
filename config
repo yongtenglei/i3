@@ -42,7 +42,17 @@ exec --no-startup-id nm-applet
 #exec_always --no-startup-id nitrogen --restore &
 exec --no-startup-id ~/scripts/wp.sh &
 
-exec_always --no-startup-id picom &
+#exec_always --no-startup-id picom &
+
+# git clone https://github.com/yaocccc/picom
+# cd picom
+# git checkout implement-window-animations
+#
+# rm -rf build
+# LDFLAGS="-L/usr/local/lib" CPPFLAGS="-I/usr/local/include" meson --buildtype=release . build
+# ninja -C build
+# sudo ninja -C build install
+exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom.conf &
 
 exec_always --no-startup-id killall dunst
 exec_always --no-startup-id sleep 1.5; exec dunst &
@@ -58,7 +68,7 @@ exec_always --no-startup-id sleep 1.5; exec fcitx5 &
 exec_always --no-startup-id ~/scripts/remaps.sh &
 
 #open browser
-bindsym $mod+b exec waterfox
+bindsym $mod+b exec  ~/scripts/somethingUseful/launchchrome
 
 # muti-monitor
 #exec --no-startup-id xrandr --output DP-3 --mode 2560x1440 --pos 0x0 --rotate normal  --primary  --right-of DP-2
@@ -89,6 +99,10 @@ bindsym $mod+Shift+m exec amixer -qM set Master toggle
 
 
 bindsym $mod+z exec flameshot gui
+
+bindsym $mod+Shift+z exec ~/scripts/somethingUseful/wechat
+
+bindsym $mod+Shift+a exec neovide
 
 # redshift
 exec --no-startup-id ~/scripts/redshift.sh &
@@ -137,7 +151,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec "rofi -modi run,drun -show drun"
+bindsym $mod+d exec "rofi -theme reynight -show drun -modi run,drun -show-icons"
 #bindsym $mod+e exec "rofi -modi run,drun -show run"
 
 # A more modern dmenu replacement is rofi:
