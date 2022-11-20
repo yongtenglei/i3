@@ -78,9 +78,9 @@ bindsym $mod+b exec  ~/scripts/somethingUseful/launchchrome
 #bindsym $mod+m exec --no-startup-id xrandr --output HDMI-0 --right-of DP-2 --primary --auto
 
 # for HDMI
-#bindsym $mod+x move workspace to output DP-2 HDMI-0
+bindsym $mod+x move workspace to output DP-2 HDMI-0
 # for DP
-bindsym $mod+x move workspace to output DP-2 DP-3
+#bindsym $mod+x move workspace to output DP-2 DP-3
 
 #scratchpad
 # 把当前窗口设为便笺本
@@ -101,8 +101,6 @@ bindsym $mod+Shift+m exec amixer -qM set Master toggle
 bindsym $mod+z exec flameshot gui
 
 bindsym $mod+Shift+z exec ~/scripts/somethingUseful/wechat
-
-bindsym $mod+Shift+a exec neovide
 
 # redshift
 exec --no-startup-id ~/scripts/redshift.sh &
@@ -145,7 +143,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec st
-bindsym $mod+Return exec kitty
+#bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -295,11 +294,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# theme Dracula
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+#client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+#client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+#client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+#client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+#client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-client.background       #F8F8F2
+#client.background       #F8F8F2
+
+# theme catppuccin
+# class                 border   backgr. text    indicator child_border
+client.focused          #96CDFB  #96CDFB #FFFFFF #ABE9B3   #96CDFB
+client.focused_inactive #6E6C7E  #6E6C7E #FFFFFF #ABE9B3   #96CDFB
+client.unfocused        #1E1E2E  #1E1E2E #FFFFFF #1E1E2E   #1E1E2E
+client.urgent           #ABE9B3  #ABE9B3 #FFFFFF #96CDFB   #B5E8E0
+client.placeholder      #1E1E2E  #1E1E2E #FFFFFF #1E1E2E   #1E1E2E
+client.background       #FFFFFF 
+
